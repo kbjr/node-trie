@@ -1,0 +1,44 @@
+h1. node-trie
+
+Author: James Brumond
+Version: 0.2.1
+
+Copyright 2011 James Brumond
+Dual licensed under MIT and GPL
+
+h2. Install
+
+<pre><code>npm install trie</code></pre>
+
+h2. Samples
+
+<pre><code>var trie = require('trie');
+
+var myTrie = new trie.Trie();
+
+// Adding words
+myTrie.addWord('hello');
+myTrie.addWord('world');
+
+// Removing words
+myTrie.removeWord('world');
+
+// Checking for words
+myTrie.lookup('hello'); // true
+myTrie.lookup('world'); // false
+
+// Testing prefixes
+myTrie.isValidPrefix('h'); // true
+myTrie.isValidPrefix('he'); // true
+myTrie.isValidPrefix('ho'); // false
+
+// Serializing
+var jsonBlob = myTrie.dumpJson();
+
+// Unserializing
+var otherTrie = new Trie();
+otherTrie.loadJson(jsonBlob);
+
+// Shortcut functions
+var trie3 = trie.createTrieFromArray([ 'word1', 'word2', 'word3' ])
+var trie4 = trie.createTrieFromJson(jsonBlob);</code></pre>

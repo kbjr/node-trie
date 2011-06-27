@@ -1,0 +1,16 @@
+{
+	"author": "James Brumond <kbjr14@gmail.com> (http://jbrumond.me)",
+	"name": "trie",
+	"description": "A trie dictionary storage model",
+	"version": "0.2.1",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/kbjr/node-trie.git"
+	},
+	"main": "trie.js",
+	"engines": {
+		"node": "*"
+	},
+	"dependencies": { },
+	"devDependencies": { }
+}
