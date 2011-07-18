@@ -36,7 +36,7 @@ myTrie.isValidPrefix('ho'); // false
 var jsonBlob = myTrie.dumpJson();
 
 // Unserializing
-var otherTrie = new Trie();
+var otherTrie = new trie.Trie();
 otherTrie.loadJson(jsonBlob);
 
 // Shortcut functions
