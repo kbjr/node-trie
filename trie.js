@@ -80,6 +80,29 @@ var Trie = function() {
 	};
 	
 	/**
+	 * Get longest matching prefix
+	 */
+	self.getLongestPrefix = function(word) {
+ 	    if (typeof word !== 'string' || ! word.length) {return false;}
+ 	    var result = "", prevString = ""
+ 	    var current = dictionary;
+ 			for (var i = 0, c = word.length; i < c; i++) {
+ 				if (! current[word[i]]) {
+ 					break;
+ 				}
+ 				result += word[i];
+ 	      current = current[word[i]];
+ 	      if(current[FLAG_INDEX] === 1){
+ 	         prevString = result
+ 	      }
+ 			}
+ 	    if(current[FLAG_INDEX] !== 1){
+ 	       return prevString
+ 	    }
+ 	    return result
+ 	};
+	
+	/**
 	 * Get a string representation of the trie structure
 	 */
 	self.dumpJson = function() {
